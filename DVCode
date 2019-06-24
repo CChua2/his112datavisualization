@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Total Patent Applications', 'Total Patent Grants'],
+          ['1965', 100150, 66647],
+          ['1970', 109359, 67964],
+          ['1975', 107456, 76810],
+          ['1980', 112379, 66170],
+          ['1985', 126788, 77245],
+          ['1990', 176264, 99077],
+          ['1995', 228238, 113834],
+          ['2000', 315015, 175979],
+          ['2005', 417508, 157718],
+          ['2010', 520277, 244341],
+          ['2015', 629647, 325979]
+        ]);
+
+        var options = {
+          chart: {
+            title: 'U.S. Patent Office Total Patent Applications and Grants (1965-2015)'
+          }
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
+
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+      }
+    </script>
+  </head>
+  <body>
+    <div id="columnchart_material" style="width: 800px; height: 500px;"></div>
+  </body>
+</html>
